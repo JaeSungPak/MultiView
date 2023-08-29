@@ -8,6 +8,7 @@ setup(
         "ldm",
         "ldm.models.diffusion",
         "ldm.modules.diffusionmodules",
+        "ldm.modules.distributions",
         "ldm.modules",
         "download",
     ],

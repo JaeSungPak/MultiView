@@ -20,6 +20,7 @@ setup(
         "segment_anything@git+https://github.com/facebookresearch/segment-anything.git#egg=onnx,onnxruntime",
         "rembg>=2.0.50",
         "trimesh>=3.23.1",
+        "pytorch-lightning>=2.0.6",
     ],
     author="jsp",
 )

@@ -7,6 +7,7 @@ setup(
         "utils"
     ],
     install_requires=[
+        "diffusers>=0.19.3",
     ],
     author="jsp",
 )

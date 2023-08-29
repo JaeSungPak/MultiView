@@ -18,8 +18,5 @@ setup(
         "onnx>=1.14.0",
         
     ],
-    dependency_links=[
-        "https://github.com/facebookresearch/segment-anything.git",
-    ],
     author="jsp",
 )

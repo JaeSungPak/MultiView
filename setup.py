@@ -13,6 +13,7 @@ setup(
         "diffusers>=0.19.3",
         "transformers>=4.31.0",
         "einops>=0.6.1",
+        "omegaconf>=2.3.0",
     ],
     author="jsp",
 )

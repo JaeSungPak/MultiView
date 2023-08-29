@@ -4,7 +4,8 @@ setup(
     name="Multiview",
     packages=[
         "generate",
-        "utils"
+        "utils",
+        "ldm",
     ],
     install_requires=[
         "diffusers>=0.19.3",

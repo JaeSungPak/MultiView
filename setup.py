@@ -4,6 +4,7 @@ setup(
     name="Multiview",
     packages=[
         "generate",
+        "utils"
     ],
     install_requires=[
     ],

@@ -16,6 +16,7 @@ setup(
         "omegaconf>=2.3.0",
         "onnxruntime>=1.15.1",
         "onnx>=1.14.0",
+        "rembg>=2.0.50",
         
     ],
     author="jsp",

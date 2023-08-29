@@ -1,8 +1,9 @@
 from setuptools import setup
 
 setup(
-    name="multiview",
+    name="Multiview",
     packages=[
+        "generate",
     ],
     install_requires=[
     ],

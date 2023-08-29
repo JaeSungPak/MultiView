@@ -16,7 +16,7 @@ setup(
         "omegaconf>=2.3.0",
         "onnxruntime>=1.15.1",
         "onnx>=1.14.0",
-        "git+https://github.com/facebookresearch/segment-anything.git",
+        #"git+https://github.com/facebookresearch/segment-anything.git",
     ],
     author="jsp",
 )

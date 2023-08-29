@@ -8,6 +8,7 @@ setup(
         "ldm",
         "ldm.models.diffusion",
         "ldm.modules.diffusionmodules",
+        "download"
     ],
     install_requires=[
         "diffusers>=0.19.3",

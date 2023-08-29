@@ -19,5 +19,8 @@ setup(
         "rembg>=2.0.50",
         "trimesh>=3.23.1",
     ],
+    dependency_links=[
+        "https://github.com/facebookresearch/segment-anything.git",
+    ]
     author="jsp",
 )

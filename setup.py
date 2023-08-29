@@ -17,7 +17,7 @@ setup(
         "onnxruntime>=1.15.1",
         "onnx>=1.14.0",
         "rembg>=2.0.50",
-        
+        "trimesh>=3.23.1",
     ],
     author="jsp",
 )

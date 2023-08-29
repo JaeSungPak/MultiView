@@ -16,11 +16,9 @@ setup(
         "omegaconf>=2.3.0",
         "onnxruntime>=1.15.1",
         "onnx>=1.14.0",
+        "segment_anything@git+https://github.com/facebookresearch/segment-anything.git#egg=onnx"
         "rembg>=2.0.50",
         "trimesh>=3.23.1",
-    ],
-    dependency_links = [
-        "git+https://github.com/facebookresearch/segment-anything.git"
     ],
     author="jsp",
 )

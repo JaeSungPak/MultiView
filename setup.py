@@ -8,7 +8,8 @@ setup(
         "ldm",
         "ldm.models.diffusion",
         "ldm.modules.diffusionmodules",
-        "download"
+        "ldm.modules",
+        "download",
     ],
     install_requires=[
         "diffusers>=0.19.3",
@@ -21,7 +22,8 @@ setup(
         "rembg>=2.0.50",
         "trimesh>=3.23.1",
         "pytorch-lightning>=2.0.6",
-        "matplotlib>=3.7.2"
+        "matplotlib>=3.7.2",
+        "rich>=13.5.2",
     ],
     author="jsp",
 )

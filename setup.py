@@ -21,6 +21,7 @@ setup(
         "rembg>=2.0.50",
         "trimesh>=3.23.1",
         "pytorch-lightning>=2.0.6",
+        "matplotlib>=3.7.2"
     ],
     author="jsp",
 )

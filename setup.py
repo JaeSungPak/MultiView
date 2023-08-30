@@ -13,7 +13,6 @@ setup(
         "ldm.models",
         "ldm.modules",
         "ldm.thirdp",
-        "ldm.thirdp",
         "download",
     ],
     install_requires=[

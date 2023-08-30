@@ -12,6 +12,7 @@ setup(
         "ldm.modules.encoders",
         "ldm.models",
         "ldm.modules",
+        "ldm.thirdp",
         "download",
     ],
     install_requires=[
@@ -22,11 +23,13 @@ setup(
         "onnxruntime>=1.15.1",
         "onnx>=1.14.0",
         "segment_anything@git+https://github.com/facebookresearch/segment-anything.git#egg=onnx,onnxruntime",
+        "clip@git+https://github.com/openai/CLIP.git",
         "rembg>=2.0.50",
         "trimesh>=3.23.1",
         "pytorch-lightning>=2.0.6",
         "matplotlib>=3.7.2",
         "rich>=13.5.2",
+        "kornia>=0.7.0",
        ],
     author="jsp",
 )

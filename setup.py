@@ -10,6 +10,7 @@ setup(
         "ldm.modules.diffusionmodules",
         "ldm.modules.distributions",
         "ldm.modules.encoders",
+        "ldm.thirdp.psp",
         "ldm.models",
         "ldm.modules",
         "ldm.thirdp",

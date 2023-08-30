@@ -26,7 +26,7 @@ setup(
         "pytorch-lightning>=2.0.6",
         "matplotlib>=3.7.2",
         "rich>=13.5.2",
-        "taming@git+https://github.com/CompVis/taming-transformers.git#egg=taming-transformers"
+        "taming @ -e git+https://github.com/CompVis/taming-transformers.git#egg=taming-transformers"
     ],
     author="jsp",
 )

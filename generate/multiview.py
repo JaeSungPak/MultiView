@@ -10,7 +10,6 @@ from utils.utils import pred_bbox, image_preprocess_nosave
 
 class MultiView:
     def __init__(self):
-        os.mkdir("./input")
         self._GPU_INDEX = 1
         self._HALF_PRECISION = True
         self.device = f"cuda:{self._GPU_INDEX}" if torch.cuda.is_available() else "cpu"

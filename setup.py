@@ -9,6 +9,7 @@ setup(
         "ldm.models.diffusion",
         "ldm.modules.diffusionmodules",
         "ldm.modules.distributions",
+        "ldm.modules.encoders",
         "ldm.models",
         "ldm.modules",
         "download",

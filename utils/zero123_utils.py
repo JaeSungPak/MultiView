@@ -44,9 +44,9 @@ def init_model(device, ckpt, half_precision=False):
     models = dict()
     print('Instantiating LatentDiffusion...')
     if half_precision:
-        models['turncam'] = torch.compile(load_model_from_config(config, ckpt, device=device)).half()
+        models['turncam'] = load_model_from_config(config, ckpt, device=device).half()
     else:
-        models['turncam'] = torch.compile(load_model_from_config(config, ckpt, device=device))
+        models['turncam'] = load_model_from_config(config, ckpt, device=device)
     print('Instantiating StableDiffusionSafetyChecker...')
     models['nsfw'] = StableDiffusionSafetyChecker.from_pretrained(
         'CompVis/stable-diffusion-safety-checker').to(device)

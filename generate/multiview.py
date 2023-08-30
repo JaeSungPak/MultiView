@@ -37,7 +37,7 @@ class MultiView:
     def multi_view(self, image_name):
         
         shape_id = image_name
-        example_input_path = f"{shape_id}.png"
+        example_input_path = f"{shape_id}"
         example_dir = f"./exp/{shape_id}"
 
         os.makedirs(example_dir, exist_ok=True)

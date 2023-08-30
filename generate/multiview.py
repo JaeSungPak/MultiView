@@ -37,7 +37,7 @@ class MultiView:
     def multi_view(self, image_name):
         
         shape_id = image_name
-        example_input_path = f"./demo/demo_examples/{shape_id}.png"
+        example_input_path = f"./input/{shape_id}.png"
         example_dir = f"./exp/{shape_id}"
 
         os.makedirs(example_dir, exist_ok=True)
@@ -46,7 +46,7 @@ class MultiView:
         stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256, scale=3, ddim_steps=75)
 
     def check_pngs(self):
-        path = Path("./demo/demo_examples/").rglob("*.png")
+        path = Path("./input").rglob("*.png")
         for img_p in path:
             try:
                 img = PIL.Image.open(img_p)

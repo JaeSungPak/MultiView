@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="Multiview",
     packages=[
-        "generate",
+        "view-generate",
         "utils",
         "ldm",
         "ldm.models.diffusion",

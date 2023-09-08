@@ -34,12 +34,12 @@ class MultiView:
 
         return output_ims
 
-    def multi_view(self, image_name, output_dir="./output/multiview"):
+    def multi_view(self, image_name):
         
-        shape_id = os.path.basename(image_name).rsplit('.')[0]
-        example_input_path = image_name
-        example_dir = output_dir + f"/{shape_id}"
-
+        shape_id = image_name
+        example_input_path = f"{shape_id}"
+        example_dir = f"./exp/{shape_id}"
+        
         os.makedirs(example_dir, exist_ok=True)
         input_raw = Image.open(example_input_path)
         input_256 = self.preprocess(self.predictor, input_raw)

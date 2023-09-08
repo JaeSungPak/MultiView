@@ -42,9 +42,9 @@ class MultiView:
 
         os.makedirs(example_dir, exist_ok=True)
         print(example_input_path)
-        input_raw = Image.open(example_input_path)
-        input_256 = self.preprocess(self.predictor, input_raw)
-        stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256, scale=3, ddim_steps=75)
+        #input_raw = Image.open(example_input_path)
+        #input_256 = self.preprocess(self.predictor, input_raw)
+        #stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256, scale=3, ddim_steps=75)
 
     def check_pngs(self, images_path):
         path = Path(images_path).rglob("*.png")

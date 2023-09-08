@@ -11,12 +11,12 @@ from utils.utils import pred_bbox, image_preprocess_nosave
 class MultiView:
     def __init__(self, gpu_num=0):
         self._GPU_INDEX = gpu_num
-        #self._HALF_PRECISION = True
-        #self.device = f"cuda:{self._GPU_INDEX}" if torch.cuda.is_available() else "cpu"
+        self._HALF_PRECISION = True
+        self.device = f"cuda:{self._GPU_INDEX}" if torch.cuda.is_available() else "cpu"
 
-        #self.models = init_model(self.device, 'zero123-xl.ckpt', half_precision=self._HALF_PRECISION)
-        #self.model_zero123 = self.models["turncam"]
-        #self.predictor = sam_init(self._GPU_INDEX)
+        self.models = init_model(self.device, 'zero123-xl.ckpt', half_precision=self._HALF_PRECISION)
+        self.model_zero123 = self.models["turncam"]
+        self.predictor = sam_init(self._GPU_INDEX)
     
     def preprocess(self, predictor, raw_im, lower_contrast=False):
         raw_im.thumbnail([512, 512], Image.Resampling.LANCZOS)

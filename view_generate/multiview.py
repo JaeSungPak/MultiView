@@ -37,7 +37,7 @@ class MultiView:
     def multi_view(self, image_name, output_dir="./output/multiview"):
         
         shape_id = os.path.basename(image_name).rsplit('.')[0]
-        example_input_path = f"{shape_id}"
+        example_input_path = image_name
         example_dir = output_dir + f"/{shape_id}"
 
         os.makedirs(example_dir, exist_ok=True)

@@ -26,14 +26,15 @@ class MultiView:
         return input_256
 
     def stage_run(self, model, device, exp_dir,
-                   input_im, scale, ddim_steps):
+                   input_im, scale, ddim_steps, view_number=4, azim_min=0, azim_max=270):
         stage1_dir = os.path.join(exp_dir, "out")
         os.makedirs(stage1_dir, exist_ok=True)
 
-        output_ims = predict_stage1_gradio(model, input_im, save_path=stage1_dir, adjust_set=list(range(8)), device=device, ddim_steps=ddim_steps, scale=scale)
+        output_ims = predict_stage1_gradio(model, input_im, save_path=stage1_dir, adjust_set=list(range(view_number)),
+                                           device=device, ddim_steps=ddim_steps, scale=scale, azim_min=azim_min, azim_max=azim_max)
         return output_ims
 
-    def multi_view(self, image_name, output_dir="./output/multiview"):
+    def multi_view(self, image_name, view_number=4, azim_min=0, azim_max=270, output_dir="./output/multiview"):
         
         shape_id = os.path.basename(image_name).rsplit('.')[0]
         example_input_path = image_name
@@ -42,7 +43,8 @@ class MultiView:
         os.makedirs(example_dir, exist_ok=True)
         input_raw = Image.open(example_input_path)
         input_256 = self.preprocess(self.predictor, input_raw)
-        stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256, scale=3, ddim_steps=75)
+        stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256,
+                                    scale=3, ddim_steps=75, view_number=view_number, azim_min=azim_min, azim_max=azim_max)
 
     def check_pngs(self, images_path):
         path = Path(images_path).rglob("*.png")

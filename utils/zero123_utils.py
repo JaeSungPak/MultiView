@@ -14,7 +14,6 @@ from transformers import CLIPImageProcessor
 from torch import autocast
 from torchvision import transforms
 
-
 def load_model_from_config(config, ckpt, device, verbose=False):
     print(f'Loading model from {ckpt}')
     pl_sd = torch.load(ckpt, map_location='cpu')
@@ -33,7 +32,6 @@ def load_model_from_config(config, ckpt, device, verbose=False):
     model.to(device)
     model.eval()
     return model
-
 
 def init_model(device, ckpt, half_precision=False):
     #config = os.path.join(os.path.dirname(__file__), '../configs/sd-objaverse-finetune-c_concat-256.yaml')
@@ -108,7 +106,7 @@ def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="
     input_im = input_im * 2 - 1
 
     # stage 1: 8
-    delta_x_1_8 = [0] * 4 + [30] * 4 + [-30] * 4
+    delta_x_1_8 = [0] * 4 + [0] * 4 + [0] * 4
     delta_y_1_8 = [0+90*(i%4) if i < 4 else 30+90*(i%4) for i in range(8)] + [30+90*(i%4) for i in range(4)]
 
     ret_imgs = []

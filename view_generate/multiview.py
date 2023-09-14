@@ -30,8 +30,8 @@ class MultiView:
         stage1_dir = os.path.join(exp_dir, "out")
         os.makedirs(stage1_dir, exist_ok=True)
 
-        output_ims = predict_stage1_gradio(model, input_im, save_path=stage1_dir, adjust_set=list(range(4)), device=device, ddim_steps=ddim_steps, scale=scale)
-
+        output_ims = predict_stage1_gradio(model, input_im, save_path=stage1_dir, adjust_set=list(range(8)), device=device, ddim_steps=ddim_steps, scale=scale)
+        print(output_ims.shape)
         return output_ims
 
     def multi_view(self, image_name, output_dir="./output/multiview"):

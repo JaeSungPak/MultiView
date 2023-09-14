@@ -107,7 +107,7 @@ def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="
 
     # stage 1: 8
     delta_x_1_8 = [0] * len(adjust_set)
-    delta_y_1_8 = [azim_min+(azim_max / (len(adjust_set)-1)*i for i in range(adjust_set)]
+    delta_y_1_8 = [azim_min+(azim_max/(len(adjust_set)-1))*i for i in range(adjust_set)]
     print(delta_y_1_8)
     ret_imgs = []
     sampler = DDIMSampler(model)

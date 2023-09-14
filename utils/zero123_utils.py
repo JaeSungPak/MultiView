@@ -98,7 +98,7 @@ def sample_model_batch(model, sampler, input_im, xs, ys, n_samples=4, precision=
             return ret_imgs
 
 @torch.no_grad()
-def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="cuda", ddim_steps=75, scale=3.0):
+def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="cuda", ddim_steps=75, scale=3.0, azim_min=0, azim_max=360):
     # raw_im = raw_im.resize([256, 256], Image.LANCZOS)
     # input_im_init = preprocess_image(models, raw_im, preprocess=False)
     input_im_init = np.asarray(raw_im, dtype=np.float32) / 255.0
@@ -106,8 +106,8 @@ def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="
     input_im = input_im * 2 - 1
 
     # stage 1: 8
-    delta_x_1_8 = [0] * 4 + [0] * 4 + [0] * 4
-    delta_y_1_8 = [0+90*(i%4) if i < 4 else 30+90*(i%4) for i in range(8)] + [30+90*(i%4) for i in range(4)]
+    delta_x_1_8 = [0] * len(adjust_set)
+    delta_y_1_8 = [azim_min+(azim_max / (len(adjust_set)-1)*i for i in range(adjust_set)]
     print(delta_y_1_8)
     ret_imgs = []
     sampler = DDIMSampler(model)

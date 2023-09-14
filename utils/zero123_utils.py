@@ -121,6 +121,9 @@ def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="
     else:
         x_samples_ddims_8 = sample_model_batch(model, sampler, input_im, delta_x_1_8, delta_y_1_8, n_samples=len(delta_x_1_8), ddim_steps=ddim_steps, scale=scale)
     sample_idx = 0
+
+    print(delta_x_1_8)
+    
     for stage1_idx in range(len(delta_x_1_8)):
         if adjust_set != [] and stage1_idx not in adjust_set:
             continue

@@ -57,7 +57,7 @@ class MultiView:
         stage1_dir = os.path.join(example_dir, "out")
         os.makedirs(stage1_dir, exist_ok=True)
 
-        output_ims = predict_stage1_gradio(self.model_zero123, input_256, save_path=stage1_dir, adjust_set=list(range(view_number)), device=self.device, ddim_steps=75, scale=scale, azim_min=azim_min, azim_max=azim_max)
+        output_ims = predict_stage1_gradio(self.model_zero123, input_256, save_path=stage1_dir, adjust_set=list(range(view_number)), device=self.device, ddim_steps=75, scale=3, azim_min=azim_min, azim_max=azim_max)
 
     def check_pngs(self, images_path):
         path = Path(images_path).rglob("*.png")

@@ -147,6 +147,9 @@ def predict_stage_comb(model, raw_im, save_path = "", device="cuda", ddim_steps=
     delta_x_1_8 = elev
     delta_y_1_8 = azim
     
+    print(delta_x_1_8)
+    print(delta_y_1_8)
+    
     ret_imgs = []
     sampler = DDIMSampler(model)
     # sampler.to(device)

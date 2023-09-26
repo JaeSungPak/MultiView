@@ -46,6 +46,10 @@ class MultiView:
         
     def multi_view_comb(self, image_name, elev=[], azim=[], output_dir="./output/multiview"):
     
+        if len(elev) != len(azim) :
+            print("elev와 azim 배열의 길이가 일치하지 않습니다.")
+            return
+    
         shape_id = os.path.basename(image_name).rsplit('.')[0]
         example_input_path = image_name
         example_dir = output_dir + f"/{shape_id}"

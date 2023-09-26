@@ -44,7 +44,7 @@ class MultiView:
         input_256 = self.preprocess(self.predictor, input_raw)
         stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256, scale=3, ddim_steps=75, view_number=view_number, azim_min=azim_min, azim_max=azim_max)
         
-    def multi_view_test(self, image_name, view_number=4, azim_min=0, azim_max=270, output_dir="./output/multiview"):
+    def multi_view_comb(self, image_name, elev=[], azim=[], output_dir="./output/multiview"):
     
         shape_id = os.path.basename(image_name).rsplit('.')[0]
         example_input_path = image_name
@@ -56,8 +56,11 @@ class MultiView:
         
         stage1_dir = os.path.join(example_dir, "out")
         os.makedirs(stage1_dir, exist_ok=True)
+        
+        elev = torch.linspace(0, 360, 4)
+        azim = torch.linspace(0, 270, 4)
 
-        output_ims = predict_stage1_gradio(self.model_zero123, input_256, save_path=stage1_dir, adjust_set=list(range(view_number)), device=self.device, ddim_steps=75, scale=3, azim_min=azim_min, azim_max=azim_max)
+        output_ims = predict_stage_comb(self.model_zero123, input_256, save_path=stage1_dir, adjust_set=list(elev), device=self.device, ddim_steps=75, scale=3, elev=elev, azim=azim)
 
     def check_pngs(self, images_path):
         path = Path(images_path).rglob("*.png")

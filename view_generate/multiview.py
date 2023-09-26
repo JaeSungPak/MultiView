@@ -44,7 +44,7 @@ class MultiView:
         input_256 = self.preprocess(self.predictor, input_raw)
         stage_imgs = self.stage_run(self.model_zero123, self.device, example_dir, input_256, scale=3, ddim_steps=75, view_number=view_number, azim_min=azim_min, azim_max=azim_max)
         
-    def multi_view(self, image_name, view_number=4, azim_min=0, azim_max=270, output_dir="./output/multiview"):
+    def multi_view_test(self, image_name, view_number=4, azim_min=0, azim_max=270, output_dir="./output/multiview"):
     
         shape_id = os.path.basename(image_name).rsplit('.')[0]
         example_input_path = image_name

@@ -134,7 +134,8 @@ def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="
     del sampler
     torch.cuda.empty_cache()
     return ret_imgs
-    
+
+@torch.no_grad()
 def predict_stage_comb(model, raw_im, save_path = "", device="cuda", ddim_steps=75, scale=3.0, elev=[], azim=[]):
     # raw_im = raw_im.resize([256, 256], Image.LANCZOS)
     # input_im_init = preprocess_image(models, raw_im, preprocess=False)

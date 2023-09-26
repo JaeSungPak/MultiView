@@ -61,9 +61,6 @@ class MultiView:
         stage1_dir = os.path.join(example_dir, "out")
         os.makedirs(stage1_dir, exist_ok=True)
         
-        elev = torch.linspace(0, 270, 4)
-        azim = torch.linspace(0, 0, 4)
-
         output_ims = predict_stage_comb(self.model_zero123, input_256, save_path=stage1_dir, device=self.device, ddim_steps=75, scale=3, adjust_set=range(len(elev)), elev=elev, azim=azim)
 
     def check_pngs(self, images_path):

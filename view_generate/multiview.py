@@ -4,7 +4,7 @@ import PIL
 #from pathlib import Path
 #from PIL import UnidentifiedImageError
 from PIL import Image, ImageFile
-from utils.zero123_utils import predict_stage1_gradio, init_model
+from utils.zero123_utils import predict_stage1_gradio, predict_stage_comb, init_model
 from utils.sam_utils import sam_init, sam_out_nosave
 from utils.utils import pred_bbox, image_preprocess_nosave
 

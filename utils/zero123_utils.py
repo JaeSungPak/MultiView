@@ -134,7 +134,7 @@ def predict_stage1_gradio(model, raw_im, save_path = "", adjust_set=[], device="
     del sampler
     torch.cuda.empty_cache()
     return ret_imgs
-
+    
 @torch.no_grad()
 def predict_stage_comb(model, raw_im, save_path = "", device="cuda", ddim_steps=75, scale=3.0, elev=[], azim=[]):
     # raw_im = raw_im.resize([256, 256], Image.LANCZOS)
@@ -151,8 +151,7 @@ def predict_stage_comb(model, raw_im, save_path = "", device="cuda", ddim_steps=
     sampler = DDIMSampler(model)
     # sampler.to(device)
     if adjust_set != []:
-        x_samples_ddims_8 = sample_model_batch(model, sampler, input_im,
-                                               [delta_x_1_8[i] for i in adjust_set], [delta_y_1_8[i] for i in adjust_set],
+        x_samples_ddims_8 = sample_model_batch(model, sampler, input_im, [delta_x_1_8[i] for i in adjust_set], [delta_y_1_8[i] for i in adjust_set],
                                                n_samples=len(adjust_set), ddim_steps=ddim_steps, scale=scale)
     else:
         x_samples_ddims_8 = sample_model_batch(model, sampler, input_im, delta_x_1_8, delta_y_1_8, n_samples=len(delta_x_1_8), ddim_steps=ddim_steps, scale=scale)

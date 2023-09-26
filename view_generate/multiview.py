@@ -60,7 +60,7 @@ class MultiView:
         elev = torch.linspace(0, 360, 4)
         azim = torch.linspace(0, 270, 4)
 
-        output_ims = predict_stage_comb(self.model_zero123, input_256, save_path=stage1_dir, device=self.device, ddim_steps=75, scale=3, elev=elev, azim=azim)
+        output_ims = predict_stage_comb(self.model_zero123, input_256, save_path=stage1_dir, device=self.device, ddim_steps=75, scale=3, adjust_set=range(len(elev)), elev=elev, azim=azim)
 
     def check_pngs(self, images_path):
         path = Path(images_path).rglob("*.png")
